@@ -6,7 +6,7 @@ JOIN tbl_khoa ON tbl_giangvien.maKhoa = tbl_khoa.maKhoa;
 2.
 SELECT tbl_giangvien.maGV, tbl_giangvien.tenGV, tbl_khoa.tenKhoa 
 FROM tbl_giangvien  
-INNER JOIN tbl_khoa ON tbl_giangvien.maKhoa = tbl_khoa.maKhoa
+JOIN tbl_khoa ON tbl_giangvien.maKhoa = tbl_khoa.maKhoa
 WHERE tbl_giangvien.maGV IN (SELECT maGV FROM tbl_huongdan WHERE COUNT(maSV) >= 3);
 
 3.
@@ -17,13 +17,13 @@ WHERE maSV NOT IN (SELECT maSV FROM tbl_huongdan);
 4.
 SELECT tbl_khoa.sdt 
 FROM tbl_khoa 
-INNER JOIN tbl_khoa ON tbl_khoa.maKhoa = tbl_sinhvien.maKhoa 
+JOIN tbl_khoa ON tbl_khoa.maKhoa = tbl_sinhvien.maKhoa 
 WHERE tbl_sinhvien.tenSV = 'Le van son';
 
 5.
 SELECT tbl_detai.maDT, tbl_detai.tenDT 
 FROM tbl_detai 
-INNER JOIN tbl_huongdan ON tbl_detai.maDT = tbl_huongdan.maDT 
+JOIN tbl_huongdan ON tbl_detai.maDT = tbl_huongdan.maDT 
 HAVING COUNT(tbl_huongdan.maSV) > 2;
 
 6.
@@ -33,19 +33,19 @@ WHERE kinhPhi = (SELECT MAX(kinhPhi) FROM tbl_detai);
 7.
 SELECT tbl_khoa.tenKhoa, COUNT(tbl_sinhvien.maSV) AS soLuongSinhVien
 FROM tbl_khoa
-INNER JOIN tbl_sinhvien ON tbl_khoa.maKhoa = tbl_sinhvien.maKhoa
+JOIN tbl_sinhvien ON tbl_khoa.maKhoa = tbl_sinhvien.maKhoa
 GROUP BY tbl_khoa.maKhoa;
 
 8.
 SELECT tbl_sinhvien.maSV, tbl_sinhvien.tenSV, tbl_huongdan.ketQua 
 FROM tbl_sinhvien
-INNER JOIN tbl_khoa ON tbl_sinhvien.maKhoa = tbl_khoa.maKhoa
-INNER JOIN tbl_huongdan ON tbl_sinhvien.maSV = tbl_huongdan.maSV
+JOIN tbl_khoa ON tbl_sinhvien.maKhoa = tbl_khoa.maKhoa
+JOIN tbl_huongdan ON tbl_sinhvien.maSV = tbl_huongdan.maSV
 WHERE tbl_khoa.tenKhoa = 'DIALY và QLTN';
 
 9.
 SELECT tbl_sinhvien.maSV, tbl_sinhvien.tenSV, YEAR(CURRENT_DATE) - YEAR(tbl_sinhvien.namSinh) AS tuoi 
 FROM tbl_sinhvien
-INNER JOIN tbl_khoa ON tbl_sinhvien.maKhoa = tbl_khoa.maKhoa
+JOIN tbl_khoa ON tbl_sinhvien.maKhoa = tbl_khoa.maKhoa
 WHERE tbl_khoa.tenKhoa = 'TOAN';
 
