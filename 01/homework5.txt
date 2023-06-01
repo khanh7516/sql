@@ -51,7 +51,7 @@ CREATE TABLE tbl_doanhso (
   nhanvien_id int NOT NULL,
   soHoaDon int NOT NULL,
   heSo float NOT NULL,
-  thang integer NOT NULL,
+  thang int NOT NULL,
   trangThai varchar(100),
   created_at date,
   updated_at date,
