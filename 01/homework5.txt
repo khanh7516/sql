@@ -18,7 +18,7 @@ CREATE TABLE tbl_nguoidung (
   deleted_at date,
   CONSTRAINT fk_nguoidung_vaitro  
   FOREIGN KEY (vaitro_id) REFERENCES tbl_vaitro(id)
-)
+);
 
 CREATE TABLE tbl_vaitro (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -27,7 +27,7 @@ CREATE TABLE tbl_vaitro (
   created_at date NOT NULL,
   updated_at date NOT NULL,
   deleted_at date NOT NULL
-)
+);
 
 CREATE TABLE tbl_luong (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -44,7 +44,7 @@ CREATE TABLE tbl_luong (
   deleted_at date,
   CONSTRAINT fk_luong_nhanvien  
   FOREIGN KEY (nhanvien_id) REFERENCES tbl_nhanvien(id)
-)
+);
 
 CREATE TABLE tbl_doanhso (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -58,7 +58,7 @@ CREATE TABLE tbl_doanhso (
   deleted_at date,
   CONSTRAINT fk_doanhso_nhanvien  
   FOREIGN KEY (nhanvien_id) REFERENCES tbl_nhanvien(id)
-)
+);
 
 CREATE TABLE tbl_sanpham (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -81,7 +81,7 @@ CREATE TABLE tbl_sanpham (
   FOREIGN KEY (danhmuc_id) REFERENCES tbl_danhmuc(id),
   CONSTRAINT fk_sanpham_nhacungcap  
   FOREIGN KEY (nhacungcap_id) REFERENCES tbl_nhacungcap(id)
-)
+);
 
 CREATE TABLE tbl_giohang (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -92,7 +92,7 @@ CREATE TABLE tbl_giohang (
   deleted_at date,
   CONSTRAINT fk_giohang_khachhang  
   FOREIGN KEY (khachang_id) REFERENCES tbl_khachhang(id)
-)
+);
 
 CREATE TABLE tbl_chitietgiohang (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -104,7 +104,7 @@ CREATE TABLE tbl_chitietgiohang (
   FOREIGN KEY (giohang_id) REFERENCES tbl_giohang(id),
   CONSTRAINT fk_chitietgiohang_sanpham  
   FOREIGN KEY (sanpham_id) REFERENCES tbl_sanpham(id)
-)
+);
 
 CREATE TABLE tbl_hoadon (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -125,7 +125,7 @@ CREATE TABLE tbl_hoadon (
   FOREIGN KEY (giohang_id) REFERENCES tbl_giohang(id),
   CONSTRAINT fk_hoadon_nhanvien  
   FOREIGN KEY (nhanvien_id) REFERENCES tbl_nhanvien(id)
-)
+);
 
 CREATE TABLE tbl_chitiethoadon (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -140,7 +140,7 @@ CREATE TABLE tbl_chitiethoadon (
   FOREIGN KEY (giohang_id) REFERENCES tbl_giohang(id),
   CONSTRAINT fk_chitiethoadon_sanpham  
   FOREIGN KEY (sanpham_id) REFERENCES tbl_sanpham(id)
-)
+);
 
 CREATE TABLE tbl_danhgia (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -154,7 +154,7 @@ CREATE TABLE tbl_danhgia (
   deleted_at date,
   CONSTRAINT fk_danhgia_khachhang  
   FOREIGN KEY (khachang_id) REFERENCES tbl_khachhang(id)
-)
+);
 
 CREATE TABLE nhacungcap (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -165,7 +165,7 @@ CREATE TABLE nhacungcap (
   created_at date,
   updated_at date,
   deleted_at date
-)
+);
 
 CREATE TABLE danhmuc (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -176,4 +176,4 @@ CREATE TABLE danhmuc (
   created_at date,
   updated_at date,
   deleted_at date
-)
+);
