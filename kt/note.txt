@@ -5,7 +5,7 @@ admin
 
 + các chức năng chung:
 - đăng nhập/ đăng ký (yêu cầu validate)
-- xem thông tin bản thân
+- xem thông tin bản thân/ sửa thông tin bản thân
 - đăng xuất
 
 
