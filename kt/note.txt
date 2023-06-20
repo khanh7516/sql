@@ -36,3 +36,15 @@ admin
 - xem chi tiết lớp học, bài giảng
 - tham gia lớp học, bài giảng
 - gửi báo cáo, khuyến nghị cho giáo viên hoặc admin
+
+
+
+***
+bảng trung gian:
+student_lecture: học viên và các bài giảng có quan hệ n-n (1 học viên có thể tham gia nhiều bài giảng và 1 bài giảng có nhiều học viên tham gia)
+teacher_lecture: giáo viên và bài giảng có quan hệ n-n (1 giáo viên có thể dạy nhiều bài giảng khác nhau (VD: thầy Đạt vừa dạy javacore vừa dạy springboot), 1 bài giảng có nhiều giáo viên khác nhau VD: javacore có 4 thầy dạy)
+
+bảng score:
+mỗi lần giáo viên chấm điểm cho học sinh sẽ tạo ra 1 bản ghi lưu vào bảng này (kết nối với id học sinh và id bài giảng)
+bảng attendance:
+mỗi lần giáo viên điểm danh cho học sinh sẽ tạo ra 1 bản ghi lưa vào bảng này (kết nối với id học sinh và id bài giảng)
