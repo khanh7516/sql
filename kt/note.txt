@@ -1,0 +1,38 @@
+Hệ thống gồm 3 actors: 
+student(học viên)
+teacher(giáo viên)
+admin
+
++ các chức năng chung:
+- đăng nhập/ đăng ký (yêu cầu validate)
+- xem thông tin bản thân
+- đăng xuất
+
+
++ chức năng admin:
+- quản lý giáo viên:
+	1. thêm giáo viên vào system
+	2. sửa thông tin giáo viên
+	3. xóa giáo viên khỏi system
+- quản lý học viên:
+	1. thêm học viên vào system
+	2. thêm/ bớt học viên khỏi lớp học (course)
+	3. sửa thông tin học viên
+	4. xóa học viên khỏi system
+- quản lý lớp học:
+	1. thêm lớp học vào system
+	2. kiểm tra bài giảng của giáo viên trước khi thêm vào lớp học
+	2. thêm các bài giảng của học viên vào lớp học (sau khi kiểm tra bài giảng đã đạt yêu cầu chưa)
+	3. sửa, xóa các bài giảng khởi lớp học
+	4. xóa lớp học khỏi system
+
++ chức năng giáo viên:
+- thêm bài giảng tự soạn (sửa, xóa bài giảng khỏi lớp học)
+- điểm danh học viên
+- chấm điểm học viên
+- gửi báo cáo/ khuyến nghị cho admin
+
++ chức năng của học viên:
+- xem chi tiết lớp học, bài giảng
+- tham gia lớp học, bài giảng
+- gửi báo cáo, khuyến nghị cho giáo viên hoặc admin
